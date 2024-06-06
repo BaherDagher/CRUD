@@ -1,0 +1,81 @@
+.product img {
+    height: 17rem;
+    object-fit: contain;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-label-margin {
+    padding-top: 32px !important;
+}
+
+.product:hover {
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+
+    img {
+        transform: scale(1.1);
+    }
+}
+
+
+.success-adding {
+    width: 325px;
+    background: #fff;
+    border-radius: 8px;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.15);
+
+    img {
+        width: 22%;
+        margin-top: -35px;
+        border-radius: 50%;
+
+    }
+
+    button {
+        width: 20%;
+        background-color: #008040;
+        color: white;
+        &:hover {
+            background-color: rgb(8, 69, 12);
+            color: white;
+        }
+    }
+
+}
+
+.delete {
+    width: 360px;
+    height: 179px;
+    p {
+        font-size: 16px;
+        font-weight: 600;
+
+    }
+    
+    img {
+        width: 20%;
+        margin-top: -60px;
+        border-radius: 50%;
+        margin-bottom: 25px;
+
+    }
+    .btn-delete{
+        background-color: #CD0E0E;
+        margin-right: 20px;
+        &:hover {
+            background-color: #B50909;
+            color: white;
+        }
+    }
+    .btn-cancel{
+        background-color:rgb(12, 166, 12);
+   
+        &:hover {
+            background-color:  green ;
+            color: white;
+        }
+    }
+    
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <section class="py-5">
+        <div class="container">
+            <div class="w-75 mx-auto">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productTitle" placeholder="name@example.com">
+                    <span class="text-danger d-none py-2">Minimum 2 Characters & Must Start with Char</span>
+                    <label for="productTitle">Product Title</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productPrice" placeholder="name@example.com">
+                    <span class="text-danger d-none py-2">Price Range from 6000 to 60000</span>
+                    <label for="productPrice">Product Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productCategory" placeholder="name@example.com"
+                        list="List">
+                    <span class="text-danger d-none py-2">Only Category from List is Valid</span>
+                    <label for="productCategory">Product Category</label>
+                    <datalist id="List">
+                        <option value="Mobile"></option>
+                        <option value="TV"></option>
+                        <option value="Screens"></option>
+                        <option value="Laptops"></option>
+                        <option value="Watch"></option>
+                    </datalist>
+                </div>
+                <div class="form-floating mb-3 ">
+                    <input type="file" class="form-control custom-label-margin" id="productImage"
+                        placeholder="name@example.com" accept="image/*">
+                    <span class="text-danger d-none py-2">Choose One Image</span>
+                    <span id="imageName"></span>
+                    <label for="productImage" id="imageLabel">Product Image</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea type="text" class="form-control" id="productDescription"
+                        placeholder="name@example.com"></textarea>
+                    <span class="text-danger d-none py-2">Characters Range from 0 to 250 Char</span>
+                    <label for="productDescription">Product Description</label>
+                </div>
+                <div class="d-flex position-relative">
+                    <button class="btn btn-info mb-5" onclick="addProduct()" id="addProductButton">Add Product</button>
+                    <div id="success"
+                        class=" d-none success-adding pb-3 position-fixed z-3 d-flex justify-content-center align-content-center flex-column text-center">
+                        <img src="images/PopUp/success.png" alt="" class=" mx-auto">
+                        <h2>Thank You!</h2>
+                        <p>Product has been successfuly added!</p>
+                        <button type="button" class="mx-auto btn " onclick="closePopUp()">OK</button>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-info mb-5 d-none" onclick="updateProduct()" id="updateProductButton">Update
+                        Product</button>
+                    <div id="update"
+                        class=" d-none success-adding pb-3 position-fixed z-3 d-flex justify-content-center align-content-center flex-column text-center">
+                        <img src="images/PopUp/success.png" alt="" class=" mx-auto">
+                        <h2 class="fw-normal">Thank You!</h2>
+                        <p>Product has been successfuly updated!</p>
+                        <button type="button" class="mx-auto btn " onclick="closePopUp()">OK</button>
+                    </div>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="productSearch" placeholder="name@example.com"
+                        oninput="searchProduct()">
+                    <span class="text-danger d-none py-2">No Products Were Added</span>
+                    <span class="text-danger d-none py-2">No Products Found</span>
+                    <label for="productImage">Search</label>
+                </div>
+                <div class="row gy-3" id="productsRow">
+
+                </div>
+                <div id="delete"
+                    class=" d-none success-adding delete pb-3 position-fixed z-3 d-flex justify-content-center align-content-center flex-column text-center">
+                    <img src="images/PopUp/alert.png"
+                        alt="" class=" mx-auto">
+                    <p>Are you sure you want to delete this product?</p>
+                    <div class="buttons mt-2">
+                        <button type="button" class="btn btn-delete " onclick="confirmDelete()" id="deleteBtnPop" index>Delete</button>
+                        <button type="button" class=" btn  btn-cancel" onclick="cancelDelete()" id="cancelBtnPop" index>Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
